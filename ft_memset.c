@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.h                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsungk <minsungk@stduent.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 20:12:56 by minsungk          #+#    #+#             */
-/*   Updated: 2020/12/27 20:12:56 by minsungk         ###   ########.fr       */
+/*   Updated: 2020/12/28 22:51:43 by minsungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	*memset(void *dest, int value, size_t count)
 {
@@ -19,9 +19,6 @@ void	*memset(void *dest, int value, size_t count)
 
     i = 0;
     while (i < count)
-    {
         temp[i++] = value;        
-        //char* 로 캐스팅을 해준다 void형이기 때문에
-    }
     return temp;
 }
