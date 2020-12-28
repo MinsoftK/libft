@@ -19,6 +19,7 @@
 
 void	*ft_memset(void *dest, int value, size_t len);
 void    *ft_bzero(void *dest, size_t len);
-void    *ft_memcpy(void *dest, const void *source, size_t num);
+void    *ft_memcpy(void *dest, const void *src, size_t num);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t num);
+
 #endif
-//test
