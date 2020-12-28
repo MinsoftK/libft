@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *dest, int value, size_t count);
-void    *ft_bzero(void *dest, size_t len);
+#ifndef LIBFT_H
+# define LIBFT_H
 
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+
+void	*ft_memset(void *dest, int value, size_t len);
+void    *ft_bzero(void *dest, size_t len);
+void    *ft_memcpy(void *dest, const void *source, size_t num);
+#endif
