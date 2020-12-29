@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-void	*memset(void *dest, int value, size_t count)
+void		*memset(void *dest, int value, size_t count)
 {
-	size_t i;
-	char *temp;
+	size_t	i;
+	char	*temp;
 
 	temp = (char *)dest;
 	i = 0;
