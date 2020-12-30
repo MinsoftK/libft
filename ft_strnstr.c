@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsungk <minsungk@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 22:08:56 by minsungk          #+#    #+#             */
-/*   Updated: 2020/12/29 22:08:57 by minsungk         ###   ########.fr       */
+/*   Created: 2020/12/30 18:31:14 by minsungk          #+#    #+#             */
+/*   Updated: 2020/12/30 18:31:15 by minsungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h";
+#include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t num)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t i;
+	size_t temp;
 
 	i = 0;
-	if (!dest)
-		return ((void *)0);
-	if (!num || dest == src)
-		return (dest);
-	while (i++ < num)
+	while (big[i] && i < len)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		if ((unsigned char)c == ((unsigned char *)src)[i])
-			break ;
+		temp = 0;
+		if (little[temp] == big[i + temp])
+		{
+			while (little[temp] && big[i + temp])
+			{
+				if (little[temp] != big[i + temp] || (i + temp) >= len)
+					break ;
+				temp++;
+			}
+			if (little[temp] == '\0')
+				return (&big[i]);
+		}
+		i++;
 	}
-	if (num == i)
-		return ((void *)0);
-	return (dest + i + 1);
+	return ((void *)0);
 }

@@ -28,4 +28,3 @@ char	*ft_strchr(const char *str, int ch)
 	if (str[i] == '\0')
 		return ((void *)0);
 }
-
