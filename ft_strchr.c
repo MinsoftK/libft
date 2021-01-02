@@ -22,9 +22,8 @@ char	*ft_strchr(const char *str, int ch)
 	while (str[i])
 	{
 		if (str[i] == temp)
-			return (&str[i]);
+			return (&((char *)str)[i]);
 		i++;
 	}
-	if (str[i] == '\0')
-		return ((void *)0);
+	return ((void *)0);
 }
