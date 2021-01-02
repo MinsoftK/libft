@@ -1,42 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsungk <minsungk@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/30 15:16:42 by minsungk          #+#    #+#             */
-/*   Updated: 2020/12/30 15:16:43 by minsungk         ###   ########.fr       */
+/*   Created: 2021/01/03 07:28:11 by minsungk          #+#    #+#             */
+/*   Updated: 2021/01/03 07:28:12 by minsungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		isspace(const char *str)
+int		ft_isalpha(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
-		i++;
-	return (i);
-}
-
-int		ft_atoi(const char *str)
-{
-	int digit;
-	int i;
-	int res;
-
-	digit = 1;
-	i = isspace(str);
-	res = 0;
-	if (str[i] == '-')
-	{
-		digit *= -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]))
-		res = (res * 10) + (str[i++] - '0');
-	return (digit * res);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }
