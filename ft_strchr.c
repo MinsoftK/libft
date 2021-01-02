@@ -25,5 +25,5 @@ char	*ft_strchr(const char *str, int ch)
 			return (&((char *)str)[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
