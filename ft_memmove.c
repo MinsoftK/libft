@@ -21,12 +21,16 @@ void	*ft_memmove(void *dest, const void *src, size_t num)
 	i = 0;
 	temp1 = (unsigned char *)dest;
 	temp2 = (unsigned char *)src;
-	if (sizeof(dest) > num && sizeof(src) > num)
+	if	(!num)
 		return (NULL);
-	while (i < num)
+	if (sizeof(dest) >= num && sizeof(src) >= num)
 	{
-		temp1[i] = temp2[i];
-		i++;
+		while (i < num)
+		{
+			temp1[i] = temp2[i];
+			i++;
+		}
+		return (temp1);
 	}
-	return (temp1);
+	return (NULL);
 }
