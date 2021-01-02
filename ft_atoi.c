@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-int		isspace(const char *str)
+int		ft_isspace(const char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
 		i++;
 	return (i);
 }
@@ -29,7 +29,7 @@ int		ft_atoi(const char *str)
 	int res;
 
 	digit = 1;
-	i = isspace(str);
+	i = ft_isspace(str);
 	res = 0;
 	if (str[i] == '-')
 	{
