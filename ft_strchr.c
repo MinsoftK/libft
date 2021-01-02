@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *str, int ch)
 {
-	int i;
-	char temp;
-	char *stemp;
+	int		i;
+	char	temp;
+	char	*stemp;
 
 	i = 0;
 	temp = (char)ch;
@@ -27,5 +27,5 @@ char	*ft_strchr(const char *str, int ch)
 			return (&((char *)str)[i]);
 		i++;
 	}
-	return ((void *)0);
+	return (&stemp[i]);
 }
