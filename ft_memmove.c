@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t num)
 {
-	size_t i;
-	unsigned char *temp1;
-	unsigned char *temp2;
+	size_t			i;
+	unsigned char	*temp1;
+	unsigned char	*temp2;
 
 	i = 0;
 	temp1 = (unsigned char *)dest;
@@ -25,7 +25,7 @@ void	*ft_memmove(void *dest, const void *src, size_t num)
 		return (NULL);
 	while (i < num)
 	{
-		temp1[i]=temp2[i];
+		temp1[i] = temp2[i];
 		i++;
 	}
 	return (temp1);
