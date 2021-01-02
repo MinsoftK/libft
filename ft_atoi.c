@@ -24,19 +24,16 @@ int		ft_isspace(const char *str)
 
 int		ft_atoi(const char *str)
 {
-	int digit;
+	int sign;
 	int i;
 	int res;
 
-	digit = 1;
+	sign = 1;
 	i = ft_isspace(str);
 	res = 0;
-	if (str[i] == '-')
-	{
-		digit *= -1;
-		i++;
-	}
+	if (str[i] == '-' || str[i] == '+')
+		sign = (str[i++] == '-') ? -1 : 1;
 	while (ft_isdigit(str[i]))
 		res = (res * 10) + (str[i++] - '0');
-	return (digit * res);
+	return (sign * res);
 }
