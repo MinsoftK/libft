@@ -27,8 +27,8 @@ char	*ft_strchr(const char *str, int ch)
 		return ((char *)stemp + len);
 	while (len--)
 	{
-		if (stemp[len] == temp)
-			return (&stemp[len]);
+		if (stemp[len - 1] == temp)
+			return (&stemp[len - 1]);
 	}
 	return (NULL);
 }
