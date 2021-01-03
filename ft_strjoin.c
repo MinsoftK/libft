@@ -28,9 +28,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	if (!(temp = (char *)malloc(sizeof(char) * (len1 + len2 + 1))))
 		return (NULL);
-	while (++i <= len1)
+	while (++i < len1)
 		temp[i] = s1[i];
-	while (++j <= len2)
+	while (++j < len2)
 		temp[i + j] = s2[j];
 	temp[i + j] = '\0';
 	return (temp);

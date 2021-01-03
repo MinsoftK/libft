@@ -55,6 +55,7 @@ void	trimStr(char *temp, char const *set)
 				temp[i + j] = temp[i + j + 1];
 				j++;
 			}
+			temp[i + j] = '\0';
 		}
 		i++;
 	}
