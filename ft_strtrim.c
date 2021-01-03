@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*trimStr(char *temp, char const *set);
+void	trimStr(char *temp, char const *set);
 
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if	(s1 == NULL)
 		return (NULL);
 	if (set == NULL)
-		return (s1);
+		return ((char *)s1);
 	if (!(temp = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (s1[i])
@@ -39,7 +39,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (temp);
 }
 
-void	*trimStr(char *temp, char const *set)
+void	trimStr(char *temp, char const *set)
 {
 	size_t i;
 	size_t j;
