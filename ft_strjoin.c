@@ -27,7 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	if (!(temp = (char *)malloc(sizeof(char) * (len1 + len2 + 1))))
-		return (NULL);
+		return (ft_strdup(""));
 	while (++i < len1)
 		temp[i] = s1[i];
 	while (++j < len2)
