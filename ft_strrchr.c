@@ -23,13 +23,12 @@ char	*ft_strchr(const char *str, int ch)
 	len = ft_strlen(str);
 	temp = (char)ch;
 	stemp = (char *)str;
-	while (len + 1)
+	if (temp == '\0')
+		return ((char *)stemp + len);
+	while (len--)
 	{
-		if (stemp[len - 1] == '\0')
-			return (NULL);
 		if (stemp[len] == temp)
-			break ;
-		len--;
+			return (&stemp[len]);
 	}
-	return (&stemp[len]);
+	return (NULL);
 }
