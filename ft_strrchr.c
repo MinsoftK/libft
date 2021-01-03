@@ -25,7 +25,7 @@ char	*ft_strchr(const char *str, int ch)
 	stemp = (char *)str;
 	while (len + 1)
 	{
-		if (stemp[len] == '\0')
+		if (stemp[len - 1] == '\0')
 			return (NULL);
 		if (stemp[len] == temp)
 			break ;
