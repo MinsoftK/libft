@@ -17,7 +17,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t num)
 	size_t i;
 
 	i = 0;
-	if (!dest || !num)
+	if (!dest && !num)
 		return ((void *)0);
 	while (i < num)
 	{

@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t num)
 	i = 0;
 	if (!num || dest == src)
 		return (dest);
-	if (src == NULL)
+	if (dest == NULL && src == NULL)
 		return (NULL);
 	while (i < num)
 	{
