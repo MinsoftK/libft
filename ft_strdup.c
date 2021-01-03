@@ -14,5 +14,21 @@
 
 void	*ft_strdup(const char *s)
 {
-	
+	int		len;
+	char	*temp;
+	int		i;
+
+	i = 0;
+	len = ft_strlen(s);
+	if (!(temp = (char *)malloc(sizeof(char) * len)))
+	{
+		while (i < len)
+		{
+			temp[i] = s[i];
+			i++;
+		}
+		temp[i] = '\0';
+		return (temp);
+	}
+	return (NULL);
 }
