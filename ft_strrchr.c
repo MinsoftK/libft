@@ -31,5 +31,5 @@ char	*ft_strchr(const char *str, int ch)
 			break ;
 		len--;
 	}
-	return (&stemp[i]);
+	return (&stemp[len]);
 }
