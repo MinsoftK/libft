@@ -12,9 +12,8 @@
 
 #include "libft.h"
 
-static void		free_malloc(char **temp, unsigned int index);
+static char		*free_malloc(char **temp, unsigned int index);
 static size_t	get_cnt(char const *s, char c);
-static void		*free_null(char **temp, int index);
 
 char				**ft_split(char const *s, char c)
 {
@@ -26,7 +25,7 @@ char				**ft_split(char const *s, char c)
 	i = 0;
 	index = 0;
 	if (!(temp = (char **)malloc(sizeof(char *) * (get_cnt(s, c) + 1))))
-		free_null(temp, index);
+		free_malloc(temp, index);
 	while (s[i])
 	{
 		if (s[i] != c)
@@ -35,7 +34,7 @@ char				**ft_split(char const *s, char c)
 			while (s[i] && s[i] != c)
 				i++;
 			if (!(temp[index] = (char*)malloc(sizeof(char) * (i - c_temp + 1))))
-				free_null(temp, index);
+				free_malloc(temp, index);
 			ft_strlcpy(temp[index++], &s[c_temp], (i - c_temp + 1));
 		}
 		else
@@ -45,7 +44,7 @@ char				**ft_split(char const *s, char c)
 	return (temp);
 }
 
-static void			free_malloc(char **temp, unsigned int index)
+static void			*free_malloc(char **temp, unsigned int index)
 {
 	unsigned int i;
 
@@ -56,6 +55,7 @@ static void			free_malloc(char **temp, unsigned int index)
 		i++;
 	}
 	free(temp);
+	return (NULL);
 }
 
 static size_t		get_cnt(char const *s, char c)
@@ -77,10 +77,4 @@ static size_t		get_cnt(char const *s, char c)
 			i++;
 	}
 	return (cnt);
-}
-
-static void			*free_null(char **temp, int index)
-{
-	free_malloc(temp, index);
-	return (NULL);
 }
