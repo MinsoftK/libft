@@ -30,10 +30,13 @@ static int		n_digit(long n, int sign)
 
 static char		make_digit(long nb)
 {
+	char temp;
+
 	if (nb > 9)
 		make_digit(nb / 10);
 	else
-		return (((char)(nb + '0')));
+		temp = nb + '0';
+	return (temp);
 }
 
 static char		*make_malloc(int cnt, int sign, int nb)
