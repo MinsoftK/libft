@@ -17,28 +17,28 @@ static size_t	get_cnt(char const *s, char c);
 
 char				**ft_split(char const *s, char c)
 {
-	size_t		i;
-	size_t		c_temp;
 	size_t		index;
+	size_t		len;
+	char		*start;
 	char		**temp;
 
-	i = 0;
 	index = 0;
 	if (!(temp = (char **)malloc(sizeof(char *) * (get_cnt(s, c) + 1))))
 		return (NULL);
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			c_temp = i;
-			while (s[i] && s[i] != c)
-				i++;
-			if (!(temp[index] = (char*)malloc(sizeof(char) * ( i - c_temp + 1))))
-				return ((free_malloc(temp,  i - c_temp + 1)));
-			ft_strlcpy(temp[index++], &s[c_temp], ( i - c_temp + 1));
+			start = (char *)s;
+			while (*s && *s != c)
+				s++;
+			len = s - start + 1;
+			if (!(temp[index] = (char*)malloc(sizeof(char) * (len))))
+				return ((free_malloc(temp, len)));
+			ft_strlcpy(temp[index++], start, (len));
 		}
 		else
-			i++;
+			s++;
 	}
 	temp[index] = 0;
 	return (temp);
