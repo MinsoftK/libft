@@ -25,7 +25,7 @@ char				**ft_split(char const *s, char c)
 
 	i = 0;
 	index = 0;
-	if (temp = (char **)malloc(sizeof(char *) * (get_cnt(s, c) + 1)))
+	if (!(temp = (char **)malloc(sizeof(char *) * (get_cnt(s, c) + 1))))
 		free_null(temp, index);
 	while (s[i])
 	{
