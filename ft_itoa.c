@@ -28,7 +28,7 @@ static int		n_digit(long n, int sign)
 	return (cnt + 1);
 }
 
-static char		make_digit(int nb)
+static void		make_digit(int nb)
 {
 	if (nb > 9)
 		make_digit(nb / 10);
