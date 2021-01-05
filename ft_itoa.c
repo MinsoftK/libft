@@ -28,12 +28,12 @@ static int		n_digit(long n, int sign)
 	return (cnt + 1);
 }
 
-static void		make_digit(int nb)
+static char		make_digit(long nb)
 {
 	if (nb > 9)
 		make_digit(nb / 10);
 	else
-		return (nb);
+		return (nb + '0');
 }
 
 static char		*make_malloc(int cnt, int sign, int nb)
