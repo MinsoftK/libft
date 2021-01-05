@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static void		free_malloc(char **temp, int index);
+static void		free_malloc(char **temp, unsigned int index);
 static size_t	get_cnt(char const *s, char c);
-static char		free_null(char **temp, int index);
+static void		*free_null(char **temp, int index);
 
 char				**ft_split(char const *s, char c)
 {
@@ -41,11 +41,11 @@ char				**ft_split(char const *s, char c)
 		else
 			i++;
 	}
-	temp[index] = '\0';
+	temp[index] = 0;
 	return (temp);
 }
 
-static void			free_malloc(char **temp, int index)
+static void			free_malloc(char **temp, unsigned int index)
 {
 	unsigned int i;
 
@@ -79,7 +79,7 @@ static size_t		get_cnt(char const *s, char c)
 	return (cnt);
 }
 
-static char			free_null(char **temp, int index)
+static void			*free_null(char **temp, int index)
 {
 	free_malloc(temp, index);
 	return (NULL);
