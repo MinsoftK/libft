@@ -20,7 +20,6 @@ char				**ft_split(char const *s, char c)
 	size_t		i;
 	size_t		c_temp;
 	size_t		index;
-	size_t		size;
 	char		**temp;
 
 	i = 0;
