@@ -67,7 +67,7 @@ static size_t		get_cnt(char const *s, char c)
 	cnt = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
 			cnt++;
 			while (s[i] && s[i] != c)
