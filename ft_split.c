@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char		*free_malloc(char **temp, unsigned int index);
+static void		*free_malloc(char **temp, unsigned int index);
 static size_t	get_cnt(char const *s, char c);
 
 char				**ft_split(char const *s, char c)
