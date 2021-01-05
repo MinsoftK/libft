@@ -20,6 +20,7 @@ char				**ft_split(char const *s, char c)
 	size_t		i;
 	size_t		c_temp;
 	size_t		index;
+	size_t		size;
 	char		**temp;
 
 	i = 0;
@@ -33,9 +34,9 @@ char				**ft_split(char const *s, char c)
 			c_temp = i;
 			while (s[i] && s[i] != c)
 				i++;
-			if (!(temp[index] = (char*)malloc(sizeof(char) * (i - c_temp + 1))))
-				return ((free_malloc(temp, index)));
-			ft_strlcpy(temp[index++], &s[c_temp], (i - c_temp + 1));
+			if (!(temp[index] = (char*)malloc(sizeof(char) * ( i - c_temp + 1))))
+				return ((free_malloc(temp,  i - c_temp + 1)));
+			ft_strlcpy(temp[index++], &s[c_temp], ( i - c_temp + 1));
 		}
 		else
 			i++;
