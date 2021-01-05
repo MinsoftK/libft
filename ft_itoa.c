@@ -34,7 +34,7 @@ static char		make_digit(long nb)
 
 	if (nb > 9)
 		make_digit(nb / 10);
-	else
+	if (nb <= 9)
 		temp = nb + '0';
 	return (temp);
 }
