@@ -14,11 +14,11 @@
 #include <stdio.h>
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	len;
-	size_t	end;
-	size_t	temp;
-	char	*temp;
+	unsigned int	i;
+	size_t			len;
+	size_t			end;
+	size_t			temp;
+	char			*temp;
 
 	i = 0;
 	if (*s1 == 0)
