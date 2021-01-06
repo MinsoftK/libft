@@ -26,6 +26,7 @@ static int		n_digit(long n, int sign)
 	}
 	if (sign == -1)
 		cnt = cnt + 1;
+		
 	return (cnt);
 }
 
