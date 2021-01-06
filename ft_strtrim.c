@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (end && ft_strchr(set, s1[end]))
 		end--;
-	if (!(temp = (char *)malloc(sizeof(char) * (end - i + 2))) || i == ft_strlen(s1))
+	if (!(temp = (char *)malloc(sizeof(char) * (end - i + 2))) || i >= end )
 	{
 		return (ft_strdup(""));
 	}
