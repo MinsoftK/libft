@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 static int		n_digit(long n, int sign)
 {
@@ -28,16 +27,6 @@ static int		n_digit(long n, int sign)
 	return (cnt + 1);
 }
 
-static char		make_digit(long nb)
-{
-	char temp;
-
-	if (nb > 9)
-		make_digit(nb / 10);
-	if (nb <= 9)
-		return ((char)(nb + '0'));
-}
-
 static char		*make_malloc(int cnt, int sign, int nb)
 {
 	char	*temp;
@@ -49,7 +38,7 @@ static char		*make_malloc(int cnt, int sign, int nb)
 	if (!(temp = (char *)malloc(sizeof(char) * (cnt))))
 		return (NULL);
 	if (sign == -1)
-		temp[i++] = '-';
+		temp[i] = '-';
 	while (i < cnt)
 	{
 		temp[i] = make_digit(nb / res);
@@ -64,15 +53,13 @@ char			*ft_itoa(int n)
 	int		cnt;
 	int		sign;
 	long	nb;
+	char	*temp;
 
-	sign = 1;
+	sign = (n < 0) ? -1 : 1;
 	if (n >= 0)
 		nb = (long)n;
 	else
-	{
 		nb = -n;
-		sign = -1;
-	}
 	cnt = n_digit(nb, sign);
-	return (make_malloc(cnt, sign, nb));
+	temp = make_malloc(cnt, sign, nb);
 }
