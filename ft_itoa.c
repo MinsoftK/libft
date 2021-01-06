@@ -58,7 +58,6 @@ char			*ft_itoa(int n)
 	int		cnt;
 	int		sign;
 	long	nb;
-	char	*temp;
 
 	sign = (n < 0) ? -1 : 1;
 	if (n >= 0)
