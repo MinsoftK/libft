@@ -37,12 +37,18 @@ static char		*make_malloc(int cnt, int sign, int nb)
 	res = 1;
 	if (!(temp = (char *)malloc(sizeof(char) * (cnt))))
 		return (NULL);
-	temp[cnt] = '\0';
-	while (cnt-- >= 0)
+	temp[cnt - 1] = '\0';
+	while (cnt >= 0)
 	{
+		if (cnt == 0 && sign == - 1)
+		{
+			temp[0] = '-';
+			break ;
+		}
 		temp[i] = (nb % 10);
 		nb /= 10;
 		i++;
+		cnt--;
 	}
 	return (temp);
 }
