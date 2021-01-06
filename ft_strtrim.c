@@ -27,6 +27,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	end = ft_strlen(s1);
+	if (i == end)
+		return (NULL);
 	while (end && ft_strchr(set, s1[end]))
 		end--;
 	if (!(temp = (char *)malloc(sizeof(char) * (end - i + 2))))
