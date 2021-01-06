@@ -23,7 +23,6 @@ static int		n_digit(long n, int sign)
 	{
 		cnt++;
 		n /= 10;
-		10;
 	}
 	if (sign == -1)
 		cnt = cnt + 1;
