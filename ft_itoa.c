@@ -37,12 +37,11 @@ static char		*make_malloc(int cnt, int sign, int nb)
 	res = 1;
 	if (!(temp = (char *)malloc(sizeof(char) * (cnt))))
 		return (NULL);
-	if (sign == -1)
-		temp[i] = '-';
-	while (i < cnt)
+	temp[cnt] = '\0';
+	while (cnt-- >= 0)
 	{
-		temp[i] = make_digit(nb / res);
-		res *= 10;
+		temp[i] = (nb % 10);
+		nb /= 10;
 		i++;
 	}
 	return (temp);
@@ -61,5 +60,5 @@ char			*ft_itoa(int n)
 	else
 		nb = -n;
 	cnt = n_digit(nb, sign);
-	temp = make_malloc(cnt, sign, nb);
+	return(make_malloc(cnt, sign, nb));
 }
