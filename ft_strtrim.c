@@ -26,10 +26,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
+	if (i == strlen(s1))
+		return (strdup(""));
 	end = ft_strlen(s1);
 	while (end && ft_strchr(set, s1[end]))
 		end--;
-	if (!(temp = (char *)malloc(sizeof(char) * (end - i + 2))) || i >= end )
+	if (!(temp = (char *)malloc(sizeof(char) * (end - i + 2))))
 	{
 		return (ft_strdup(""));
 	}
