@@ -17,39 +17,40 @@ static int		n_digit(long n, int sign)
 	int cnt;
 
 	cnt = 0;
+	if (n == 0)
+		cnt = 1;
 	while (n > 0)
 	{
 		cnt++;
 		n /= 10;
+		10;
 	}
 	if (sign == -1)
 		cnt = cnt + 1;
-	return (cnt + 1);
+	return (cnt);
 }
 
 static char		*make_malloc(int cnt, int sign, int nb)
 {
 	char	*temp;
-	int		i;
 	int		res;
 
-	i = 0;
 	res = 1;
-	if (!(temp = (char *)malloc(sizeof(char) * (cnt))))
+	if (!(temp = (char *)malloc(sizeof(char) * (cnt + 1))))
 		return (NULL);
-	temp[cnt - 1] = '\0';
+	temp[cnt--] = '\0';
 	while (cnt >= 0)
 	{
-		if (cnt == 0 && sign == - 1)
+		if (cnt == 0 && sign == -1)
 		{
 			temp[0] = '-';
 			break ;
 		}
-		temp[i] = (nb % 10);
+		temp[cnt] = (nb % 10) + '0';
 		nb /= 10;
-		i++;
 		cnt--;
 	}
+	cnt = 0;
 	return (temp);
 }
 
@@ -63,7 +64,10 @@ char			*ft_itoa(int n)
 	if (n >= 0)
 		nb = (long)n;
 	else
-		nb = -n;
+	{
+		nb = (long)n;
+		nb = -nb;
+	}
 	cnt = n_digit(nb, sign);
-	return(make_malloc(cnt, sign, nb));
+	return (make_malloc(cnt, sign, nb));
 }
