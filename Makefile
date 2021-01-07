@@ -41,8 +41,8 @@ all	: $(NAME)
 $(NAME) : $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
-bonus:	$(OBJS) $(BOBJS) $(POBJS)
-	ar rc $(NAME) $(BOBJS) $(OBJS) $(POBJS)
+bonus:	$(OBJS) $(BOBJS)
+	ar rc $(NAME) $(BOBJS) $(OBJS)
 
 clean :
 	$(RM) $(OBJS)

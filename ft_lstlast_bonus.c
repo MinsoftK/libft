@@ -16,4 +16,5 @@ t_list		*ft_lstlast_bonus(t_list *lst)
 {
 	while (lst->next)
 		lst++;
+	return (lst);
 }
