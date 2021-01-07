@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <stdio.h>
 
 static int		n_digit(long n, int sign)
 {
@@ -51,7 +49,6 @@ static char		*make_malloc(int cnt, int sign, long nb)
 		nb /= 10;
 		cnt--;
 	}
-	cnt = 0;
 	return (temp);
 }
 
