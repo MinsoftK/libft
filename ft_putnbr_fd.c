@@ -22,7 +22,10 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n > 0)
 		temp = (long)n;
 	else if (n == 0)
+	{
+		temp = 0;
 		write(fd, "0", 1);
+	}
 	else
 	{
 		temp = (long)n;

@@ -32,9 +32,7 @@ static int		n_digit(long n, int sign)
 static char		*make_malloc(int cnt, int sign, long nb)
 {
 	char	*temp;
-	int		res;
 
-	res = 1;
 	if (!(temp = (char *)malloc(sizeof(char) * (cnt + 1))))
 		return (NULL);
 	temp[cnt--] = '\0';
