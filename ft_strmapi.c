@@ -18,11 +18,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t			len;
 	char			*temp;
 
-	
-	len = ft_strlen(s);
 	if (s == 0 || f == 0)
 		return (0);
-	if (!(temp = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(temp = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
 	i = 0;
 	while (s[i])
@@ -32,21 +30,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	temp[i] = '\0';
 	return (temp);
-}
-#include <stdio.h>
-
-char expand(unsigned int i, char c)
-{
-	c = c + 1;
-	return(c);
-}
-int main()
-{
-	char *s1="this is test";
-	char *test = ft_strmapi(s1, expand);
-	unsigned int i;
-
-	i = 0;
-	printf("expand : %s\n" ,test);
-	return (0);
 }
