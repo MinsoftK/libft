@@ -43,7 +43,7 @@ bonus:	$(OBJS) $(BOBJS)
 	ar rc $(NAME) $(BOBJS) $(OBJS)
 
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) ${BOBJS}
 
 fclean : clean
 	$(RM) $(NAME)
