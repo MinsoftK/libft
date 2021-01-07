@@ -20,7 +20,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		temp = (*lst)->next;
 		if (!(*lst))
-		return ;
+			return ;
 		(*del)((*lst)->content);
 		free(*lst);
 		(*lst) = temp;
