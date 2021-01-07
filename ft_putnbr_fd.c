@@ -27,10 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "0", 1);
 	}
 	else
-	{
-		temp = (long)n;
-		temp = -temp;
-	}
+		temp = -(long)n;
 	while (temp)
 	{
 		num[i++] = ((temp % 10) + '0');
