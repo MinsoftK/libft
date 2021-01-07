@@ -26,7 +26,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "0", 1);
 		return ;
 	}
-	if(n < 0)
+	if (n < 0)
 		write(fd, "-", 1);
 	i = 0;
 	while (temp)
