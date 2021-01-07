@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		after_f = ft_lstnew((*f)(lst->content));
-		if (!temp)
+		if (!after_f)
 			break ;
 		ft_lstadd_back(&temp, after_f);
 		lst = lst->next;
