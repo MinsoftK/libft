@@ -20,7 +20,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	temp = NULL;
 	start = lst;
-	if (!lst && !f)
+	if (!lst)
 		return (NULL);
 	while (start)
 	{
