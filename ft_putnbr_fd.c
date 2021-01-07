@@ -18,23 +18,22 @@ void	ft_putnbr_fd(int n, int fd)
 	int		i;
 	char	num[15];
 
-	i = 0;
-	if (n > 0)
-		temp = (long)n;
-	else if (n == 0)
+	temp = (long)n;
+	if (n < 0)
+		temp = temp * -1;
+	if (n == 0)
 	{
-		temp = 0;
 		write(fd, "0", 1);
+		return (0);
 	}
-	else
-		temp = -(long)n;
+	if(n < 0)
+		write(fd, "-", 1);
+	i = 0;
 	while (temp)
 	{
 		num[i++] = ((temp % 10) + '0');
 		temp /= 10;
 	}
-	if (n < 0)
-		write(fd, "-", 1);
 	while (--i >= 0)
 		write(fd, num + i, 1);
 }
