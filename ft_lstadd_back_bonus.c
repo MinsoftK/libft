@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsungk <minsungk@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 22:43:21 by minsungk          #+#    #+#             */
-/*   Updated: 2021/01/07 22:43:22 by minsungk         ###   ########.fr       */
+/*   Created: 2021/01/08 00:54:57 by minsungk          #+#    #+#             */
+/*   Updated: 2021/01/08 00:54:58 by minsungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t i;
+	t_list *begin;
 
-	i = 0;
-	if (!lst)
-		return (0);
-	while (lst->next)
-		i++;
+	if (!lst && !(*lst) && new)
+		*lst = new;
+	begin = *lst;
+	while (begin->next)
+		begin = (begin)->next;
+	begin->next = new;
 }
