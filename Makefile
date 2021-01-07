@@ -21,8 +21,8 @@ SRCS	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 
 OBJS	= $(SRCS:.c=.o)
 
-#BSRCS	=ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-		  ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+BSRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		  #ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 		  ft_lstmap.c \
 		  ft_isupper_bonus.c ft_islower_bonus.c ft_isnumber_bonus.c \
 		  ft_isblank_bonus.c ft_strndup_bonus.c ft_strnul_bonus.c \
