@@ -35,7 +35,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	if (set == NULL)
 		return (ft_strdup(s1));
-	escape(s1, set);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	if (start == ft_strlen(s1))
