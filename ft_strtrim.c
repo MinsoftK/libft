@@ -19,8 +19,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*temp;
 
 	i = 0;
-	if (s1 == NULL || set == NULL)
+	if (s1 == NULL)
 		return (NULL);
+	if (set == NULL)
+		return (ft_strdup(s1));
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	if (i == ft_strlen(s1))
@@ -28,10 +30,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (end && ft_strchr(set, s1[end]))
 		end--;
-	if (!(temp = (char *)malloc(sizeof(char) * (end - i + 2))))
-	{
-		return (ft_strdup(""));
-	}
 	temp = ft_substr((char *)s1, i, end - i + 1);
 	return (temp);
 }
