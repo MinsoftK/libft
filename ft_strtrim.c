@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char	*input_value(char *temp, char const *s1 ,size_t start, size_t end)
+char	*input_value(char *temp, char const *s1, size_t start, size_t end)
 {
 	size_t i;
-	
+
 	i = 0;
 	while (start < end)
 		temp[i++] = s1[start++];
@@ -42,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (end && ft_strchr(set, s1[end - 1]))
 		end--;
-	len = end - start + 2;
+	len = end - start + 1;
 	if (!(temp = (char *)malloc(sizeof(char) * (len))))
 		return (NULL);
 	return (input_value(temp, s1, start, end));
