@@ -12,12 +12,6 @@
 
 #include "libft.h"
 
-#include <stdio.h>
-#include "ft_strlen.c"
-#include "ft_strchr.c"
-#include "ft_strdup.c"
-#include "ft_substr.c"
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t			i;
@@ -40,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!(temp = (char *)malloc(sizeof(char) * (end - start + 2))))
 		return (NULL);
 	i = 0;
-	while (start <= end)
+	while (start < end)
 		temp[i++] = s1[start++];
 	temp[i] = '\0';
 	return (temp);
