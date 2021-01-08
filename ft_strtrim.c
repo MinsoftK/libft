@@ -12,15 +12,17 @@
 
 #include "libft.h"
 
-static char		*escape(char const *s1, char const *set)
+void	*input_value(char *temp, char const *s1 ,size_t start, size_t end)
 {
-	if (s1 == NULL)
-		return (NULL);
-	if (set == NULL)
-		return (ft_strdup(s1));
+	size_t i;
+	
+	i = 0;
+	while (start < end)
+		temp[i++] = s1[start++];
+	temp[i] = '\0';
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t			i;
 	size_t			start;
@@ -29,6 +31,10 @@ char			*ft_strtrim(char const *s1, char const *set)
 	char			*temp;
 
 	start = 0;
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+		return (ft_strdup(s1));
 	escape(s1, set);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
@@ -40,9 +46,6 @@ char			*ft_strtrim(char const *s1, char const *set)
 	len = end - start + 2;
 	if (!(temp = (char *)malloc(sizeof(char) * (len))))
 		return (NULL);
-	i = 0;
-	while (start < end)
-		temp[i++] = s1[start++];
-	temp[i] = '\0';
+	input_value(temp, s1, start, end);
 	return (temp);
 }
