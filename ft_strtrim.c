@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*input_value(char *temp, char const *s1 ,size_t start, size_t end)
+char	*input_value(char *temp, char const *s1 ,size_t start, size_t end)
 {
 	size_t i;
 	
@@ -24,7 +24,6 @@ void	*input_value(char *temp, char const *s1 ,size_t start, size_t end)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t			i;
 	size_t			start;
 	size_t			end;
 	size_t			len;
@@ -45,6 +44,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = end - start + 2;
 	if (!(temp = (char *)malloc(sizeof(char) * (len))))
 		return (NULL);
-	input_value(temp, s1, start, end);
-	return (temp);
+	return (input_value(temp, s1, start, end));
 }
