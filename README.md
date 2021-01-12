@@ -69,13 +69,19 @@ typedef struct    s_list
 > ft_lstnew • ft_lstadd_front • ft_lstsize • ft_lstlast • ft_lstadd_back • ft_lstdelone • ft_lstclear • ft_lstiter • ft_lstmap  
 
 
-💡 Useful Links
-libftest by jtoty
-git clone https://github.com/jtoty/Libftest.git
-unit test by alelievr
-git clone https://github.com/alelievr/libft-unit-test.git
-war machine by ska42
-git clone https://github.com/ska42/libft-war-machine.git
+### :bulb: Useful Links
+- __libftest__ by [_jtoty_](https://github.com/jtoty/Libftest)
+    ```
+    git clone https://github.com/jtoty/Libftest.git
+    ```
+- __unit test__ by [_alelievr_](https://github.com/alelievr/libft-unit-test)
+    ```
+    git clone https://github.com/alelievr/libft-unit-test.git
+    ```
+- __war machine__ by [_ska42_](https://github.com/ska42/libft-war-machine)
+    ```
+    git clone https://github.com/ska42/libft-war-machine.git
+    ```
 
 
 <br/>
