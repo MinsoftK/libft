@@ -66,8 +66,16 @@ typedef struct    s_list
 
 아래의 함수들을 구현해 라이브러리에 추가했다.
 
-> ft_lstnew • ft_lstadd_front • ft_lstsize • ft_lstlast • ft_lstadd_back • ft_lstdelone • ft_lstclear • ft_lstiter • ft_lstmap
+> ft_lstnew • ft_lstadd_front • ft_lstsize • ft_lstlast • ft_lstadd_back • ft_lstdelone • ft_lstclear • ft_lstiter • ft_lstmap  
 
+
+💡 Useful Links
+libftest by jtoty
+git clone https://github.com/jtoty/Libftest.git
+unit test by alelievr
+git clone https://github.com/alelievr/libft-unit-test.git
+war machine by ska42
+git clone https://github.com/ska42/libft-war-machine.git
 
 
 <br/>
