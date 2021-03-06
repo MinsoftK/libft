@@ -12,24 +12,38 @@
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*input_value(char *temp, char const *s1, size_t start, size_t end)
 {
-	size_t	i;
-	size_t	end;
-	char	*temp;
+	size_t i;
 
 	i = 0;
+	while (start < end)
+		temp[i++] = s1[start++];
+	temp[i] = '\0';
+	return (temp);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t			start;
+	size_t			end;
+	size_t			len;
+	char			*temp;
+
+	start = 0;
 	if (s1 == NULL)
 		return (NULL);
-	while (s1[i] && ft_strchr(set, s1[i]))
-		i++;
-	end = ft_strlen(s1);
-	while (end && ft_strchr(set, s1[end]))
-		end--;
-	if (!(temp = (char *)malloc(sizeof(char) * (end - i + 2))))
-	{
+	if (set == NULL)
+		return (ft_strdup(s1));
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	if (start == ft_strlen(s1))
 		return (ft_strdup(""));
-	}
-	temp = ft_substr((char *)s1, i, end - i + 1);
-	return (temp);
+	end = ft_strlen(s1);
+	while (end && ft_strchr(set, s1[end - 1]))
+		end--;
+	len = end - start + 1;
+	if (!(temp = (char *)malloc(sizeof(char) * (len))))
+		return (NULL);
+	return (input_value(temp, s1, start, end));
 }

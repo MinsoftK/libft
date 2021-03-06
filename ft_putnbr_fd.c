@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsungk <minsungk@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 19:43:49 by minsungk          #+#    #+#             */
-/*   Updated: 2021/01/03 19:43:50 by minsungk         ###   ########.fr       */
+/*   Created: 2021/01/07 18:36:36 by minsungk          #+#    #+#             */
+/*   Updated: 2021/01/07 18:36:38 by minsungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	i;
-	char			*temp;
+	long	temp;
+	int		i;
+	char	num[15];
 
-	if (s == 0 || f == 0)
-		return (0);
-	if (!(temp = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-		return (NULL);
-	i = 0;
-	while (s[i])
+	temp = (long)n;
+	if (n < 0)
+		temp = temp * -1;
+	if (n == 0)
 	{
-		temp[i] = f(i, s[i]);
-		i++;
+		write(fd, "0", 1);
+		return ;
 	}
-	temp[i] = '\0';
-	return (temp);
+	if (n < 0)
+		write(fd, "-", 1);
+	i = 0;
+	while (temp)
+	{
+		num[i++] = ((temp % 10) + '0');
+		temp /= 10;
+	}
+	while (--i >= 0)
+		write(fd, num + i, 1);
 }
